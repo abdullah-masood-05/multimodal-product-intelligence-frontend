@@ -9,11 +9,18 @@ interface ResultPanelProps {
 export default function ResultPanel({ data }: ResultPanelProps) {
   if (!data || !data.listing) return null;
 
-  const { listing } = data;
+  const { listing, is_duplicate, duplicate_score } = data;
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-      <h2 className="text-2xl font-bold mb-4">{listing.title}</h2>
+      <div className="flex justify-between items-start mb-4">
+        <h2 className="text-2xl font-bold">{listing.title}</h2>
+        {is_duplicate && (
+          <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+            ⚠️ Duplicate Detected ({(duplicate_score * 100).toFixed(1)}% Match)
+          </span>
+        )}
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
