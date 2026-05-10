@@ -9,8 +9,10 @@ import TwinSimulator from '@/components/TwinSimulator';
 import TwinResults from '@/components/TwinResults';
 import MarketResearcher from '@/components/MarketResearcher';
 import MarketResults from '@/components/MarketResults';
+import PricingStrategist from '@/components/PricingStrategist';
+import PricingResults from '@/components/PricingResults';
 
-type Tab = 'analyze' | 'campaign' | 'twin' | 'market';
+type Tab = 'analyze' | 'campaign' | 'twin' | 'market' | 'pricing';
 
 export default function Home() {
   const [tab, setTab] = useState<Tab>('analyze');
@@ -31,6 +33,10 @@ export default function Home() {
   const [marketResult, setMarketResult] = useState<any>(null);
   const [marketError, setMarketError] = useState<string | null>(null);
 
+  // Pricing state
+  const [pricingResult, setPricingResult] = useState<any>(null);
+  const [pricingError, setPricingError] = useState<string | null>(null);
+
   const handleAnalyzeResult = (data: any) => { setAnalyzeResult(data); setAnalyzeError(null); };
   const handleAnalyzeError = (msg: string) => { setAnalyzeError(msg); setAnalyzeResult(null); };
 
@@ -42,6 +48,9 @@ export default function Home() {
 
   const handleMarketResult = (data: any) => { setMarketResult(data); setMarketError(null); };
   const handleMarketError = (msg: string) => { setMarketError(msg); setMarketResult(null); };
+
+  const handlePricingResult = (data: any) => { setPricingResult(data); setPricingError(null); };
+  const handlePricingError = (msg: string) => { setPricingError(msg); setPricingResult(null); };
 
   return (
     <main className="min-h-screen bg-gray-50 p-8">
@@ -82,6 +91,13 @@ export default function Home() {
                 ${tab === 'market' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
             >
               📊 Market Researcher
+            </button>
+            <button
+              onClick={() => setTab('pricing')}
+              className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all
+                ${tab === 'pricing' ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+            >
+              💰 Pricing Strategist
             </button>
           </div>
         </div>
@@ -127,6 +143,17 @@ export default function Home() {
               <div className="bg-red-50 text-red-600 p-4 rounded-lg border border-red-100 text-center text-sm">{marketError}</div>
             )}
             {marketResult && <MarketResults data={marketResult} />}
+          </section>
+        )}
+
+        {/* Pricing Strategist Tab */}
+        {tab === 'pricing' && (
+          <section className="space-y-6">
+            <PricingStrategist onResult={handlePricingResult} onError={handlePricingError} />
+            {pricingError && (
+              <div className="bg-red-50 text-red-600 p-4 rounded-lg border border-red-100 text-center text-sm">{pricingError}</div>
+            )}
+            {pricingResult && <PricingResults data={pricingResult} />}
           </section>
         )}
       </div>
