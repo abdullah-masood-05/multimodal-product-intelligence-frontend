@@ -77,3 +77,20 @@ export const runMarketResearch = async (
   });
   return response.data;
 };
+
+export const runPricingStrategy = async (
+  marketData: string,
+  twinData: string,
+  baseCost: string
+) => {
+  const formData = new FormData();
+  formData.append('market_data', marketData);
+  formData.append('twin_data', twinData);
+  formData.append('base_cost', baseCost);
+
+  const response = await api.post('/api/pricing', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+    timeout: 60000,
+  });
+  return response.data;
+};
