@@ -48,7 +48,7 @@ export default function PricingStrategist({ onResult, onError }: PricingStrategi
             value={baseCost}
             onChange={(e) => setBaseCost(e.target.value)}
             placeholder="e.g. 250.00"
-            className="w-full pl-9 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none"
+            className="w-full pl-9 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none"
             disabled={loading}
           />
         </div>

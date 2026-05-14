@@ -83,7 +83,8 @@ export default function TwinSimulator({ onResult, onError }: TwinSimulatorProps)
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             placeholder="e.g. $49.99"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900
+             focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none"
             disabled={loading}
           />
         </div>
@@ -94,7 +95,8 @@ export default function TwinSimulator({ onResult, onError }: TwinSimulatorProps)
             value={audience}
             onChange={(e) => setAudience(e.target.value)}
             placeholder="e.g. Gen Z Gamers"
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900
+             focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none"
             disabled={loading}
           />
         </div>
@@ -107,7 +109,8 @@ export default function TwinSimulator({ onResult, onError }: TwinSimulatorProps)
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Detailed description of features and benefits..."
           rows={3}
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none resize-none"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900
+           focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none resize-none"
           disabled={loading}
         />
       </div>

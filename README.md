@@ -1,15 +1,16 @@
 # Multimodal Product Intelligence Frontend
 
-Next.js frontend for AI-powered product image analysis with drag-and-drop upload, real-time results, and visual search.
-
-This is the client application for the [Multimodal Product Intelligence API](https://github.com/Abdullah-Masood-05/multimodal-product-intelligence-api).
+The official Next.js client for the **Autonomous Multi-Agent Product Intelligence API**. This UI is designed to showcase the capabilities of a 5-agent AI pipeline in a clean, professional, and visually stunning interface.
 
 ## Features
 
-- **Drag-and-Drop Upload**: Clean, interactive zone for uploading product images.
-- **Real-time Processing**: Loading states while the backend analyzes the image.
-- **Structured Results**: Elegant display of AI-generated titles, descriptions, categories, tags, and pricing estimates.
-- **Responsive Design**: Built with Tailwind CSS for mobile-friendly layouts.
+This application features 5 distinct modules accessible via a top-level tab navigation, each corresponding to an AI Agent:
+
+- 🔍 **Product Analysis (Agent 1)**: Drag-and-drop image upload that instantly returns structured JSON metadata (titles, descriptions, tags) and flags visual duplicates in real-time using vector similarity.
+- 📊 **Market Researcher (Agent 2)**: Scans a target product against a Qdrant vector database of competitors, returning Market Positioning, Average Market Price, and individual competitor Threat Levels.
+- 🤖 **Twin Simulator (Agent 3)**: The ultimate "recruiter bait". Upload a product and the AI generates synthetic shopper personas (twins), simulates their emotional reactions, and calculates their purchase probability.
+- 💰 **Pricing Strategist (Agent 4)**: A calculator interface that ingests Market Data and Customer Twin Data to determine the mathematically ideal Price Point and Margin Risk.
+- 📢 **Ad Campaign Builder (Agent 5)**: Enter a budget and target audience, and the backend uses concurrent threading to instantly write 5 bespoke marketing campaigns (Facebook, Instagram, Google Shopping, WhatsApp, Email).
 
 ## Tech Stack
 
@@ -46,17 +47,25 @@ The application will be available at `http://localhost:3000`.
 
 ## Project Structure
 
-```
+```text
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx         ← Root layout with Tailwind config
-│   │   ├── page.tsx           ← Main application page
-│   │   └── globals.css        ← Global styles
+│   │   ├── layout.tsx             ← Root layout with Tailwind config
+│   │   ├── page.tsx               ← Main application holding the 5 Tab views
+│   │   └── globals.css            ← Global styles
 │   ├── components/
-│   │   ├── DropZone.tsx       ← Drag-and-drop image upload
-│   │   └── ResultPanel.tsx    ← Display for AI analysis results
+│   │   ├── DropZone.tsx           ← Agent 1 Upload
+│   │   ├── ResultPanel.tsx        ← Agent 1 Results
+│   │   ├── MarketResearcher.tsx   ← Agent 2 Upload
+│   │   ├── MarketResults.tsx      ← Agent 2 Results
+│   │   ├── TwinSimulator.tsx      ← Agent 3 Upload
+│   │   ├── TwinResults.tsx        ← Agent 3 Results
+│   │   ├── PricingStrategist.tsx  ← Agent 4 Upload
+│   │   ├── PricingResults.tsx     ← Agent 4 Results
+│   │   ├── CampaignBuilder.tsx    ← Agent 5 Upload
+│   │   └── CampaignResults.tsx    ← Agent 5 Results
 │   └── lib/
-│       └── api.ts             ← Axios configuration and API calls
+│       └── api.ts                 ← Axios API configuration & endpoints
 ├── package.json
 └── tailwind.config.ts
 ```

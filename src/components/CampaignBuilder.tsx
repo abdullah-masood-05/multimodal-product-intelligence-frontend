@@ -80,7 +80,7 @@ export default function CampaignBuilder({ onResult, onError }: CampaignBuilderPr
           value={audience}
           onChange={(e) => setAudience(e.target.value)}
           placeholder="e.g. Women 25-35 in Lahore, interested in fashion"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
           disabled={loading}
         />
       </div>
@@ -93,7 +93,7 @@ export default function CampaignBuilder({ onResult, onError }: CampaignBuilderPr
           value={budget}
           onChange={(e) => setBudget(e.target.value)}
           placeholder="e.g. PKR 5000/day or $50/day"
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
           disabled={loading}
         />
       </div>
@@ -106,7 +106,7 @@ export default function CampaignBuilder({ onResult, onError }: CampaignBuilderPr
           onChange={(e) => setProductInfo(e.target.value)}
           placeholder="e.g. Handmade leather bag, genuine cowhide, available in 3 colors"
           rows={2}
-          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none resize-none"
+          className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm text-gray-900 focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none resize-none"
           disabled={loading}
         />
       </div>
