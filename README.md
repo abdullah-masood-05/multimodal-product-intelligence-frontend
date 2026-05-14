@@ -45,6 +45,17 @@ npm run dev
 
 The application will be available at `http://localhost:3000`.
 
+## Deployment (Vercel)
+
+This frontend is optimized for zero-config deployment on **Vercel** or **Netlify**.
+
+1. Push your code to a GitHub repository.
+2. Go to [Vercel](https://vercel.com/) and click **Add New Project**.
+3. Import your GitHub repository.
+4. In the Environment Variables section, add:
+   - `NEXT_PUBLIC_API_URL`: Your deployed Render backend URL (e.g. `https://productiq-backend.onrender.com`)
+5. Click **Deploy**.
+
 ## Project Structure
 
 ```text
